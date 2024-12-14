@@ -60,5 +60,5 @@ jobs:
           app-name: 'ebai-fe-linux'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DE1123A6FA724105BE680605DC3AF598 }}
-          package: .next # Đảm bảo package là thư mục .next đã được build
+          package: .next 
 
