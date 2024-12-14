@@ -53,8 +53,7 @@ jobs:
 
       - name: Tag Docker image with version
         run: |
-          VERSION=$(date +%Y%m%d%H%M%S)
-          docker tag ebai-fe ${{ secrets.DOCKER_USERNAME }}/ebai-fe:$VERSION
+          docker tag ebai-fe ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
 
       - name: Push Docker image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/ebai-fe:$VERSION
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
