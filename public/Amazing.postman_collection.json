@@ -1,0 +1,969 @@
+{
+	"info": {
+		"_postman_id": "9af6ebbd-4d07-4b35-ae9e-40c6f1bebf4d",
+		"name": "Amazing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17380296"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/users",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3MzEzOTU5NzUsImV4cCI6MTgxNzc5NTk3NX0.aX6CM2i3rxHwpTrOqX1m6bgHj1E7EcUG-tPxcmza56I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"phoneNumber\": \"1234567890\",\n  \"address\": \"New Address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverv1}}/users/3",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "nguyenthienchnnel1@gmai.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Thien @ 123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/auth/login",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxMjM5MjE4LCJleHAiOjE4MTc2MzkyMTh9.vvo-vP0xj8PHrlyZA0kkTeUOrbOeLwdg6Vm9gFcyAXE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{serverv1}}/auth/giathien",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auth",
+								"giathien"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxMjM3MTg0LCJleHAiOjE4MTc2MzcxODR9.dovk3ITsH9PiXd_ja2S9VLb7GfHh_jkmxrK8BtF1OnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "gia",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cristhuuthien@gmai.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Thien@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/auth/register",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxMjM5MjE4LCJleHAiOjE4MTc2MzkyMTh9.vvo-vP0xj8PHrlyZA0kkTeUOrbOeLwdg6Vm9gFcyAXE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"giathien@gmail.com\",\n\"username\": \"giathien\",\n  \"password\": \"Thien@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverv1}}/auth/register-admin",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auth",
+								"register-admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Create Categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/Users/admin/Downloads/accessories.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Accessories",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "To Play, to work",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/categories",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/Users/admin/Documents/School/Website/amazing-be/public/images/macbook.webp"
+								},
+								{
+									"key": "name",
+									"value": "maboook",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "giathien",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/categories?page=2&limit=10",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/categories/19",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"categories",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/categories/19/auctions",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"categories",
+								"19",
+								"auctions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/health/check-db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"health",
+								"check-db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auction",
+			"item": [
+				{
+					"name": "Create Aution",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3MzEzOTU5NzUsImV4cCI6MTgxNzc5NTk3NX0.aX6CM2i3rxHwpTrOqX1m6bgHj1E7EcUG-tPxcmza56I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "category_id",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/Users/admin/Downloads/Apple_new-macbookair-wallpaper-screen_11102020_big.jpg.large.jpg",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook1.webp",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook2.webp",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook5.webp",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook6.webp",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook7.webp",
+										"/Users/admin/Documents/School/amazing-fe/public/macbook8.webp"
+									]
+								},
+								{
+									"key": "specifications",
+									"value": "{\n  \"brand\": \"Apple\",\n  \"type\": \"Desktop\",\n  \"ram_size\": \"8 GB\",\n  \"processor\": \"Apple M1\",\n  \"storage_type\": \"SSD\",\n  \"gpu\": \"Integrated 8-Core\",\n  \"model\": \"Apple Mac Mini 2020\",\n  \"operating_system\": \"Mac OS\",\n  \"series\": \"Apple Mac mini\",\n  \"most_suitable_for\": [\"Casual Computing\", \"Graphic Design\"],\n  \"mpn\": \"A2348\",\n  \"ssd_capacity\": \"256 GB\",\n  \"graphics_processing_type\": \"Integrated/On-Board Graphics\",\n  \"form_factor\": \"Mini Desktop\",\n  \"country_region_of_manufacture\": \"Vietnam\",\n  \"color\": \"Silver\",\n  \"upc\": \"Does Not Apply\"\n}\n",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Apple Mac Mini 2020 A2348 Apple M1 8GB RAM 256GB SSD Mac OS 8C/8C",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The item was previously used. The item may have some signs of cosmetic wear, but it is fully operational and functions as intended. This item may be a floor model or store return that was used. See the seller's listing for full details and a description of any imperfections",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "21",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1299",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "starting_bid",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2024-11-14T04:45:00Z",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2024-11-22T04:46:00Z",
+									"type": "text"
+								},
+								{
+									"key": "condition",
+									"value": "Used",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/auctions",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auctions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Auctions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/auctions/",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auctions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Certain Actions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{serverv1}}/auctions/macbook-pro-m2-feea9",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auctions",
+								"macbook-pro-m2-feea9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update auction",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "description",
+								"value": "giathien",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "end_date",
+									"value": "2024-11-12T12:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "highest_bid",
+									"value": "-100",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/auctions/macbook-pro-m2-34f89",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auctions",
+								"macbook-pro-m2-34f89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auction by UserID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3MzEzOTU5NzUsImV4cCI6MTgxNzc5NTk3NX0.aX6CM2i3rxHwpTrOqX1m6bgHj1E7EcUG-tPxcmza56I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/auctions/user/3",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"auctions",
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bid",
+			"item": [
+				{
+					"name": "Create Bid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNDEyNzY5LCJleHAiOjE4MTc4MTI3Njl9.B-YZsNqLM2uTKBJ7yNSlcGVJWzZBcaiwFy689-q8phQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"auctionSlug\": \"macbook-pro-m2-96dac\",\n  \"amount\": 2000\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverv1}}/bid",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"bid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all bid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/bid/macbook-pro-m2-96dac",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"bid",
+								"macbook-pro-m2-96dac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishlist",
+			"item": [
+				{
+					"name": "Add wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNDEyNzY5LCJleHAiOjE4MTc4MTI3Njl9.B-YZsNqLM2uTKBJ7yNSlcGVJWzZBcaiwFy689-q8phQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "auctionSlug",
+									"value": "macbook-pro-m2-96dac",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverv1}}/wishlist",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3MzEzOTU5NzUsImV4cCI6MTgxNzc5NTk3NX0.aX6CM2i3rxHwpTrOqX1m6bgHj1E7EcUG-tPxcmza56I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/wishlist/7",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"wishlist",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNDEyNzY5LCJleHAiOjE4MTc4MTI3Njl9.B-YZsNqLM2uTKBJ7yNSlcGVJWzZBcaiwFy689-q8phQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/wishlist",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Get Invoice by userID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNDEyNzY5LCJleHAiOjE4MTc4MTI3Njl9.B-YZsNqLM2uTKBJ7yNSlcGVJWzZBcaiwFy689-q8phQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/invoice/10417",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"invoice",
+								"10417"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Invoice by Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxNDAwOTkzLCJleHAiOjE4MTc4MDA5OTN9.chQ_5Ka90hAv0jo32SZ9D7CqFg1AuII8JyqXtPu8g1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverv1}}/invoice/admin",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"invoice",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxNDAwOTkzLCJleHAiOjE4MTc4MDA5OTN9.chQ_5Ka90hAv0jo32SZ9D7CqFg1AuII8JyqXtPu8g1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"phoneNumber\": \"1234567890\",\n  \"address\": \"New Address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverv1}}/invoice/10417",
+							"host": [
+								"{{serverv1}}"
+							],
+							"path": [
+								"invoice",
+								"10417"
+							],
+							"query": [
+								{
+									"key": "phoneNumber",
+									"value": "0900",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "123 Nguyeenx Gia thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testing Connection",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "cristthien",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "cristthien",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "cristhuuthien@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Thien@123",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "m",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/bid/test/macbook-pro-m2-103bc",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"bid",
+						"test",
+						"macbook-pro-m2-103bc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMxMjM5MjE4LCJleHAiOjE4MTc2MzkyMTh9.vvo-vP0xj8PHrlyZA0kkTeUOrbOeLwdg6Vm9gFcyAXE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
