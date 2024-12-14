@@ -13,6 +13,7 @@ RUN npm install --legacy-peer-deps
 
 # Copy toàn bộ mã nguồn vào container
 COPY . .
+COPY .env .env
 
 
 # Build ứng dụng Next.js
