@@ -31,10 +31,21 @@ jobs:
           npm install --legacy-peer-deps
           npm run build --if-present
           
+      - name: Check before copying files
+        run: |
+          ls -al ./public
+          ls -al ./.next/static
+
       - name: static
         run: | 
           cp -R ./public ./.next/standalone/public
           cp -R ./.next/static ./.next/standalone/.next/static
+
+      - name: Check after copying files
+        run: |
+          ls -al ./.next/standalone/public
+          ls -al ./.next/standalone/.next/static
+
         
       
       - name: Upload artifact for deployment job
