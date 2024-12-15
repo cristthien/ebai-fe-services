@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>CICD Check</div>;
+  return <div>Change something</div>;
 }
