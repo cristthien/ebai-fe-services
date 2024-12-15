@@ -57,3 +57,16 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
+
+      - name: Connect to VM and pull Docker image
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Kéo image từ Docker Hub
+            docker pull ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
+
+            # Chạy container từ image đã pull về
+            docker run -d -p 80:5001 ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
