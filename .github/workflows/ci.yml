@@ -59,15 +59,13 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
 
       - name: Connect to VM and pull Docker image
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22  # Cổng mặc định SSH
-          script: |
-            # Kéo image từ Docker Hub
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
+            # Pull Docker image from Docker Hub
+            echo "Pulling image from Docker Hub..."
             docker pull ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
-
-            # Chạy container từ image đã pull về
-            docker run -d -p 80:5001 ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
