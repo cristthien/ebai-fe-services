@@ -64,6 +64,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22  # Cổng mặc định SSH
           script: |
             # Kéo image từ Docker Hub
             docker pull ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
