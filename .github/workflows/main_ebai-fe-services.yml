@@ -22,16 +22,10 @@ jobs:
           node-version: '20.x'
 
       - name: npm install, build, and test
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_CLIENT_URL: ${{ secrets.NEXT_PUBLIC_CLIENT_URL }}
-          NEXT_PUBLIC_SOCKET_URL: ${{ secrets.NEXT_PUBLIC_SOCKET_URL }}
-          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
         run: |
-          npm install --legacy-peer-deps
+          npm install
           npm run build --if-present
-      - name: Zip artifact for deployment
-        run: Compress-Archive -Path .\* -DestinationPath release.zip
+          npm run test --if-present
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -57,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_291252D6DD5247C4912541F669726976 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3A17AB53908543F9B0A4B1F41DD18985 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AD6008040BE04CAFAB733006CAA15029 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E046512A4828484D8EB34D3D5E79BB24 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2A7F67FE2E354C56845A80D2610C1F43 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_05F43DD29145471EAD8360A833A26EC8 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
