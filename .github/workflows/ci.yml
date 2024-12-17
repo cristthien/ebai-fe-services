@@ -62,15 +62,15 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
           ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-            # Pull Docker image from Docker Hub first
-            echo "Pulling image from Docker Hub..."
-            docker pull ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
-
             # Stop and remove the old container if it exists
             echo "Stopping and removing old container..."
             docker stop ebai-fe-container || true
             docker rm ebai-fe-container || true
-
+      
+            # Pull Docker image from Docker Hub
+            echo "Pulling image from Docker Hub..."
+            docker pull ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
+      
             # Run the Docker container with a new name
             echo "Starting new Docker container..."
             docker run -d -p 80:5001 --name ebai-fe-container ${{ secrets.DOCKER_USERNAME }}/ebai-fe:latest
