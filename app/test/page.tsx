@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Gia thiện ok chưa<strong>CICD</strong></div>;
+  return <div>Check again<strong>CICD</strong></div>;
 }
